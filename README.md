@@ -55,4 +55,7 @@
   
     The project was selected as a hands-on opportunity to practice real-world data cleaning techniques. It demonstrates how to handle messy, inconsistent & incomplete datasets.
 
+## License
+
+    This dataset is synthetic and publicly available for educational use under the CC BY-SA 4.0 Licence.
     
