@@ -34,4 +34,25 @@
 
 ## Data Cleaning Steps
 
-  - 
+    - Standardised column names for consistency (lowercase, underscores).
+    - Replaced invalid values such as "ERROR", "UNKNOWN" and blank strings with NaN.
+    - Handled missing values:
+    - Filled numeric columns (quantity, price_per_unit) with the median.
+    - Filled categorical columns (item, payment_method, location) with "Unknown".
+    - Filled missing transaction_date entries using the most frequent date (mode).
+    - Converted data types:
+        quantity remains a float for flexibility in further analysis
+        price_per_unit & total_spent converted to float
+        transaction_date converted to datetime
+    - Recalculated total_spent using quantity × price_per_unit to ensure accuracy.
+    - Created new date-related features:
+        day_of_week (e.g. Monday, Tuesday)
+        month (e.g. January, February)
+    - Removed duplicate rows (if present).
+    - Validated data integrity: all missing values have been resolved, and key calculations are consistent.
+
+## Project Motivation
+  
+    The project was selected as a hands-on opportunity to practice real-world data cleaning techniques. It demonstrates how to handle messy, inconsistent & incomplete datasets.
+
+    
