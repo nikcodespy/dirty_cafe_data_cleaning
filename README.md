@@ -28,28 +28,18 @@
 
 ## Tools
 
-  - Python
-  - Pandas
-  - Jupyter Notebook
+  - MySQL
 
 ## Data Cleaning Steps
 
-    - Standardised column names for consistency (lowercase, underscores).
-    - Replaced invalid values such as "ERROR", "UNKNOWN" and blank strings with NaN.
-    - Handled missing values:
-    - Filled numeric columns (quantity, price_per_unit) with the median.
-    - Filled categorical columns (item, payment_method, location) with "Unknown".
-    - Filled missing transaction_date entries using the most frequent date (mode).
-    - Converted data types:
-        quantity remains a float for flexibility in further analysis
-        price_per_unit & total_spent converted to float
-        transaction_date converted to datetime
-    - Recalculated total_spent using quantity × price_per_unit to ensure accuracy.
-    - Created new date-related features:
-        day_of_week (e.g. Monday, Tuesday)
-        month (e.g. January, February)
-    - Removed duplicate rows (if present).
-    - Validated data integrity: all missing values have been resolved, and key calculations are consistent.
+1. Rename columns to snake_case and fix data types
+2. Replace 'ERROR', 'UNKNOWN', and blank strings with NULL values
+3. Fill missing price_per_unit values based on the item name (where price is unique per item)
+4. Calculate missing total_spent using quantity * price_per_unit
+5. Calculate the missing quantity using total_spent / price_per_unit
+6. Fill missing item values where the price uniquely maps to an item (skipping ambiguous prices)
+7. Remove duplicate transactions based on transaction_id
+8. Create a new cleaned table called clean_cafe_sales containing all cleaned data
 
 ## Project Motivation
   
