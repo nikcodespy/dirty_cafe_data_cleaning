@@ -32,14 +32,14 @@
 
 ## Data Cleaning Steps
 
-1. Rename columns to snake_case and fix data types
-2. Replace 'ERROR', 'UNKNOWN', and blank strings with NULL values
-3. Fill missing price_per_unit values based on the item name (where price is unique per item)
-4. Calculate missing total_spent using quantity * price_per_unit
-5. Calculate the missing quantity using total_spent / price_per_unit
-6. Fill missing item values where the price uniquely maps to an item (skipping ambiguous prices)
-7. Remove duplicate transactions based on transaction_id
-8. Create a new cleaned table called clean_cafe_sales containing all cleaned data
+🧹 Step 1: Handle Invalid Values
+🛠️ Step 2: Rename Columns & Fix Data Types
+🔎 Step 3: Check for Duplicate Transactions
+🔢 Step 4: Validate Numeric Ranges
+🧠 Step 5: Impute Missing item Values Using Price (Where Unambiguous)
+💰 Step 6: Calculate Missing total_spent Values
+🕳️ Step 7: Leave Remaining NULLs for Unrecoverable Fields
+📦 Step 8: Create Final Cleaned Table
 
 ## Project Motivation
   
