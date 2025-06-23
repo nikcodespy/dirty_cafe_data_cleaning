@@ -1,4 +1,4 @@
-🧹 Step 1: Handle Invalid Values
+ ** 🧹 Step 1: Handle Invalid Values **
 
 On initial inspection, I noticed two major issues:
 1. The column names used spaces instead of snake_case, e.g. Transaction ID instead of transaction_id.
