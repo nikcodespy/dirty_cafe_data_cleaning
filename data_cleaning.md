@@ -11,6 +11,7 @@ To fix this, I replaced all invalid values ('ERROR', 'UNKNOWN', and blanks) acro
 ![Image](https://github.com/user-attachments/assets/7de393fc-2a28-4263-a1d2-ab94436cc0f4)
 
 
+
 **🛠️ Step 2: Rename Columns & Fix Data Types**
 
 Once the invalid entries were replaced with NULL, I used the ALTER TABLE statement to:
@@ -31,6 +32,7 @@ This improved query readability and ensured all numeric and date fields were cor
 ![Image](https://github.com/user-attachments/assets/996dada7-a211-476c-b0a2-6c7737cb63eb)
 
 
+
 **🔎 Step 3: Check for Duplicate Transactions**
 
 To ensure there were no duplicate transactions in the dataset, I ran a query to check for any repeated transaction_id values by grouping and counting occurrences.
@@ -44,6 +46,7 @@ Filters using HAVING COUNT(*) > 1 to catch duplicates
 ✅ Result: No duplicate transaction_ids were found, so no further action was needed for deduplication.
 
 ![Image](https://github.com/user-attachments/assets/b6eff4dc-3687-4123-b221-2d5ae5de1c5e)
+
 
 
 **🔢 Step 4: Validate Numeric Ranges**
@@ -61,6 +64,7 @@ This helped confirm that all values were within expected logical ranges (e.g., n
 ✅ Result: All numeric values appeared valid — no further cleaning required for these fields.
 
 ![Image](https://github.com/user-attachments/assets/64ea3aaf-906c-4efd-8412-8910794fb35c) | ![Image](https://github.com/user-attachments/assets/90b8948e-b628-4ea0-a223-0df022d9ecfc)
+
 
 
 **🧠 Step 5: Impute Missing item Values Using Price (Where Unambiguous)**
@@ -104,6 +108,7 @@ total_spent = quantity * price_per_unit
 ![Image](https://github.com/user-attachments/assets/53dddfd3-2d71-49bc-b481-435cfc58269d)
 
 
+
 **🕳️ Step 7: Leave Remaining NULLs for Unrecoverable Fields**
 In the dataset, there were still some NULL values in the following columns:
 
@@ -122,6 +127,7 @@ No strong correlation or pattern could be used to fill the gaps confidently.
 There were no external reference data available for the missing transaction_date values.
 
 ❌ Rather than guessing and introducing noise, I left these values as NULL to maintain data integrity.
+
 
 
 **📦 Step 8: Create Final Cleaned Table**
